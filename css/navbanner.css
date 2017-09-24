@@ -1,0 +1,8 @@
+.wifi {
+	display: block;
+	width: calc(34.461em / 12);
+	height: calc(43.721em / 12);
+	background-color: #ff0000;
+	background-size: calc(34.461em / 12) calc(43.721em / 12);
+	background: url(../img/wifi_4.svg) no-repeat top left;
+}
