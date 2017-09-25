@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>S.I.D.I.I.S.</title>
+        <title>S.I.D.I.I.S. | Digitação</title>
 
         <!-- jQuery, muito útil nos scripts -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -15,26 +15,93 @@
         <!-- jQuery-UI, uma extensão do jQuery, principalmente para o arrastar e soltar -->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
+        <!-- Ícones do FontAwesome -->
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+
         <!-- Scripts e css personalizados -->
         <link rel="stylesheet" type="text/css" href="css/navbanner.css">
 
    </head>
    <body>
+   <div class="container">
+        <div id="aux_navbanner"></div>
+        <div id="aux_navbanner_2"></div>
         <div id="navbanner">
             <div class="wifi"></div>
             <div class="on_off"></div>
             <div class="impressora">
                 <navbar>
-                    <a>Quem somos</a>
-                    <a>Digitalização</a>
-                    <a>Digitação</a>
-                    <a>Tratamento de Dados</a>
-                    <a>Análise de Dados</a>
-                    <!-- <a>Criação de Sites</a> -->
-                    <!-- <a>Clientes</a> -->
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa fa-home" /></div>
+						<span class="texto">Quem somos</span>
+					</div></a>
+                    <a href=""><div class="link">
+                        <div class="icon"><span class="fa fa-comments-o" /></div>
+                        <span class="texto">Marketing</span>
+                    </div></a>
+                    <!--
+                    <a href=""><div class="link">
+                        <div class="icon"><span class="fa" /></div>
+                        <span class="texto">Otimização SEO</span>
+                    </div></a>
+                    -->
+                    <a href=""><div class="link">
+                        <div class="icon"><span class="fa fa-cogs" /></div>
+                        <span class="texto">Criação de Sistemas</span>
+                    </div></a>
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa fa-cloud-upload" /></div>
+						<span class="texto">Digitali&shyzação</span>
+					</div></a>
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa fa-edit" /></div>
+						<span class="texto">Digitação</span>
+					</div></a>
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa fa-check-square-o" /></div>
+						<span class="texto">Tratamento de Dados</span>
+					</div></a>
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa fa-bar-chart" /></div>
+						<span class="texto">Análise de Dados</span>
+					</div></a>
+                    <!--
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa" /></div>
+						<span class="texto">Criação de Sites</span>
+					</div></a>
+                    -->
+                    
+                    <!--
+                    <a href=""><div class="link">
+						<div class="icon"><span class="fa" /></div>
+						<span class="texto">Clientes</span>
+					</div></a>
+                    -->
                 </navbar>
             </div>
-            <div class="bandeja"></div>
         </div>
+        <div class="bandeja"></div>
+
+
+        <div id="pagina">
+            <h1>Digitação</h1>
+            <p>O processo de digitação inicia-se na <a>digitalização</a> de uma imagem. Após a imagem ter sido digitalizada e salva em nossos servidores, ela é processada em lotes no <strong>Teleform Reader</strong>. É importante notar que os lotes não têm relação alguma com a separação dos arquivos digitais.</p>
+            <p>Após o processamento dos lotes no <strong>Teleform Reader</strong>, cada lote é encaminhado separadamente como um job para ser feito no <strong>Teleform Verifier</strong>. Cada job no <strong>Teleform Verifier</strong> passam por três fases diferentes:</p>
+
+            <ul>
+                <li>Job QC</li>
+                <li>Evaluating</li>
+                <li>Ready for Correction</li>
+            </ul>
+
+            <h2>Job QC</h2>
+            <p>Durante a fase de <em>Job QC</em>, um operador verifica se o software detectou corretamente o tipo de documento (se é um <em>formulário de pesquisa</em>, uma <em>ficha médica</em>, uma <em>nota fiscal</em>, etc). Caso não seja o tipo de documento adequado, é possível forçar a reidentificação do documento para o tipo correto.</p>
+            <h2>Evaluating</h2>
+            <p>É o momento que um OCR é usado para fazer o reconhecimento das informações preenchidas, de acordo com um formulário previamente inserido no sistema que indica os campos em que as informações podem ser inseridas.</p>
+            <h2>Ready for Correction</h2>
+        </div>
+    </div>
 	</body>
 </html>

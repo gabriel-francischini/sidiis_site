@@ -1,8 +1,239 @@
-.wifi {
-	display: block;
-	width: calc(34.461em / 12);
-	height: calc(43.721em / 12);
-	background-color: #ff0000;
-	background-size: calc(34.461em / 12) calc(43.721em / 12);
-	background: url(../img/wifi_4.svg) no-repeat top left;
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Ubuntu+Mono');
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+/* Para mostrarmos a impressora, deve haver espaço suficiente
+   para a própria impressora e algum espaço para as margens
+   (as margens devem ter no mínimo 1/7 da largura da impressora)
+
+	calc(calc(8 * calc(794vw / 7))  * calc(90/794))= 85.0714285vw
+*/
+@media (min-width: 35em){
+	#navbanner {
+		z-index: 100;
+		margin: 0em;
+		position: absolute;
+		top: 2vw;
+		left: 5%;
+	}
+
+	#navbanner navbar {
+		font-family: Ubuntu Mono, Roboto Mono, Bitstream Vera Sans Mono, monospace;
+		text-transform: uppercase;
+		overflow: hidden;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+
+		/* O primeiro link é centralizado a 1/7 da largura da impressora 
+		   e na metade da altura da impressora ( ou metade de 1/7 da largura)*/
+		top: calc(calc(794vw / calc(7 * 2) ) * calc(90/794));
+		left: calc(calc(794vw / 7 - calc(794vw / calc(7 * 4))) * calc(90/794));
+
+		/* A navbar tem espaço exato para 11 botões, cada um com 1/2 de 1/7 da largura
+		   da impressora, além de tomar metade da impressora*/
+		width: calc(calc(11 * 794vw / calc(7 * 2) * calc(90/794)));
+		height: calc(calc(794vw / calc(7 * 2) ) * calc(90/794));
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#navbanner navbar a:link, #navbanner navbar a:visited, #navbanner navbar a:hover, #navbanner navbar a:active, #navbanner navbar a {
+		z-index: 100;
+		text-align: center;
+		margin-left: 0em;
+		width: calc(calc(794vw / calc(7 * 2) * calc(90/794)));
+		overflow: hidden;
+		background-color: none;
+		text-decoration: none;
+		color: #dfdfdf;
+	}
+
+	#navbanner navbar .link {
+		font-size: 1em;
+		display: block;
+		clear: both;
+	}
+
+	#navbanner navbar .icon {
+		display: inline-block;
+		font-size: calc(calc(794vw / calc(7 * 8) * calc(90/794)) * calc(75/100));
+		width: calc(calc(794vw / calc(7 * 4) * calc(90/794)));
+		height: calc(calc(794vw / calc(7 * 8) * calc(90/794)));
+		line-height: calc(calc(794vw / calc(7 * 8) * calc(90/794)));
+		background: #bcbcbc;
+		display: inline-block;
+		clear: both;
+		border: solid #606060 calc(calc(794vw / calc(7 * 4 * 20) * calc(90/794)));
+		border-radius: calc(calc(794vw / calc(7 * 4 * 6) * calc(90/794)));
+		color: #747474;
+	}
+
+	#navbanner navbar .icon:hover {
+		background-color: #9e9e9e;
+		color: #424242;
+	}
+
+	#navbanner navbar .icon:active {
+		background-color: #757575;
+		color: #212121;
+	}
+
+	#navbanner navbar .texto:hover {
+		color: #bdbdbd;
+	}
+
+	#navbanner navbar .texto:active {
+		color: #9e9e9e;
+	}
+
+	#navbanner navbar .texto{
+		margin-top: calc(calc(794vw / calc(7 * 16) * calc(90/794)));
+		display: block;
+		clear: both;
+		font-size: calc(calc(794vw / calc(7 * 12) * calc(90/794)));
+		/* font-size: 1em; */
+		font-weight: bold;
+		/*word-break: break-word;*/
+	}
+
+	#navbanner .impressora {
+		display: block;
+		width: calc(794vw * calc(90/794));
+		height: calc(113vw * calc(90/794));
+		background-color: #ff0000;
+		background: url(../img/impressora.svg) no-repeat top left;
+		background-size: calc(794vw * calc(90/794)) calc(113vw * calc(90/794));
+	}
+
+	@keyframes piscar_onoff {
+		0% {background: url(../img/ld_on.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		19.999% {background: url(../img/ld_on.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		20% {background: url(../img/ld_off.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		39.999% {background: url(../img/ld_off.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		40% {background: url(../img/ld_on.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		59.999% {background: url(../img/ld_on.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		60% {background: url(../img/ld_off.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		79.999% {background: url(../img/ld_off.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		80% {background: url(../img/ld_on.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+		99.999% {background: url(../img/ld_on.svg) no-repeat top left;background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));}
+	}
+
+	#navbanner .on_off {
+		z-index: 100;
+		display: block;
+		position: absolute;
+		/* O centro da imagem deve estar centralizado vw 1/4
+		   do 1/7 da largura da impressora */
+		left: calc(calc(calc(794vw / calc(7 * 4)) - calc(16.924vw / 2)) * calc(90/794));
+		top: calc(calc(calc(794vw / calc(7 * 4)) - calc(18.125vw / 2)) * calc(90/794));
+		width: calc(16.924vw * calc(90/794));
+		height: calc(18.125vw * calc(90/794));
+		background-color: #ff0000;
+		background: url(../img/ld_on.svg) no-repeat top left;
+		background-size: calc(16.924vw * calc(90/794)) calc(18.125vw * calc(90/794));
+
+		animation-duration: 2s;
+		animation-timing-function: ease-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-name: piscar_onoff;
+	}
+
+	#navbanner .wifi {
+		z-index: 100;
+		display: block;
+		position: absolute;
+		/* O wifi está 1/2 da altura da impressora abaixo do on/off 
+		   (ou 1/2 de 1/7 da largura da impressora) */
+		left: calc(calc(calc(794vw / calc(7 * 4)) - calc(34.461vw / 2)) * calc(90/794));
+		top: calc(calc(calc(794vw / calc(7 * 4)) - calc(43.721vw / 2) + calc(794vw / calc(7 * 2))) * calc(90/794));
+		width: calc(34.461vw * calc(90/794));
+		height: calc(43.721vw * calc(90/794));
+		background-color: #ff0000;
+		background: url(../img/wifi_4.svg) no-repeat top left;
+		background-size: calc(34.461vw * calc(90/794)) calc(43.721vw * calc(90/794));
+	}
+
+	.bandeja {
+		z-index: 70;
+		display: block;
+		width: calc(625vw * calc(90/794));
+		height: calc(142vw * calc(90/794));
+		background: url(../img/bandeja.svg) no-repeat top left;
+		background-size: calc(625vw * calc(90/794)) calc(142vw * calc(90/794));
+		position: absolute;
+		top: calc(calc(794vw / calc(7 * 2) ) * calc(90/794));
+		left: calc(calc(794vw / 7 - calc(794vw / calc(7 * 4))) * calc(90/794) + 5%);
+	}
+
+	#aux_navbanner {
+		position: absolute;
+		width: 100%;
+		height: calc(calc(113vw * calc(90/794)) + 2vw);
+		background: #ededed;
+		z-index: 90;
+	}
+
+	#aux_navbanner_2{
+		position: absolute;
+		width: 100%;
+		height: calc(100% - calc(calc(113vw * calc(90/794)) + 2vw));
+		top: calc(calc(113vw * calc(90/794)) + 2vw);
+		background: #ededed;
+		z-index: 60;
+	}
+
+	@keyframes imprimir {
+		0% {
+			transform: translateY(-200%);
+		}
+		66% {
+			transform: translateY(-200%);
+		}
+		95% {
+			transform: translateY(-10%);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	#pagina {
+		position: relative;
+		width: calc(calc(10 * 794vw / calc(7 * 2) * calc(90/794)));
+		top: calc(2vw + calc(calc(calc(1 + 1 / 8) * 794vw / 7 * calc(90/794))));
+		left: calc(5% + calc(calc(794vw / 7 * calc(90/794))));
+		height: 100%;
+		/*top: -150vh;*/
+		z-index: 80;
+		background: white;
+		border: solid 1px black;
+
+		animation-duration: 3s;
+		animation-timing-function: ease-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-name: imprimir;
+	}
+
+	.container {
+		height: auto;
+		width: 100%;
+		background: #ededed;
+		z-index: 1;
+	}
+
 }
