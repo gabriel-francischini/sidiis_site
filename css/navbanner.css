@@ -13,6 +13,169 @@ div {
 	border: none;
 }
 
+#navbanner navbar a:link, #navbanner navbar a:visited, #navbanner navbar a:hover, #navbanner navbar a:active, #navbanner navbar a {
+	margin: 0;
+	background-color: none;
+	text-decoration: none;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+#pagina {
+	margin: auto;
+	width: 80vw;
+	background: white;
+	border: solid 1px #bdbdbd;	
+	padding: 3em 2em 3em 2em;
+	font-family: Robot, Noto, sans-serif;
+	font-weight: 400;
+	color: #606060;
+}
+
+#pagina ul {
+	list-style-type: square;
+}
+
+#pagina li {
+	font-family: Roboto Mono, Ubuntu Mono, monospace;
+	font-variant: small-caps;
+	font-weight: 900;
+}
+
+#pagina li:first-letter {
+	font-size: 1.4em;
+}
+
+#pagina h1 {
+	font-family: Roboto Mono, Ubuntu Mono, monospace;
+	color: #ffb64c;
+	width: 100%;
+	padding-bottom: .5em;
+	border-bottom: 0.01em solid #ffb64c;
+	margin-bottom: 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#pagina h2 {
+	font-family: Roboto;
+	color: #ffb64c;
+	margin-top: 2em;
+	border-bottom: 0.01em solid #ffb64c;
+}
+
+#pagina p {
+	text-indent: 2.5em;
+	text-align: justify;
+}
+
+#pagina p strong {
+	font-family: Roboto Condensed, Noto, sans-serif;
+	font-weight: 900;
+}
+
+#pagina p em {
+	font-weight: 100;
+	font-style: italic;
+}
+
+#pagina p a {
+	font-weight: 100;
+	font-style: italic;
+	color: #3e50b4;
+	text-decoration: none;
+}
+
+#pagina p a:hover {
+	text-decoration: underline;
+}
+
+#navbanner navbar {
+		font-family: Ubuntu Mono, Roboto Mono, Bitstream Vera Sans Mono, monospace;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+}
+
+
+/* Versão Mobile */
+@media (max-width: 35em){
+	#navbanner {
+		width: 100%;
+		/*background: rgb(255, 0, 0);*/
+		text-align: justify;
+	}
+
+	#navbanner navbar {
+		margin-top: 1em;
+		display: block;
+		width: 100%;
+	}
+
+	#navbanner navbar a {
+		display: block;
+		width: 100%;
+	}
+
+	#navbanner navbar .link {
+		margin-top: .2em;
+		display: flex;
+		justify-content: space-between;
+		text-align: justify-all;
+		width: 100%;
+		background-color: #757575;
+		color: #e0e0e0;
+		border: 1px solid #616161;
+		border-left: 0;
+		border-right: 0;
+	}
+
+	#navbanner navbar .link:hover {
+		background: #616161;
+	}
+
+	#navbanner navbar .link:active {
+		background: #424242;
+	}
+
+	#navbanner navbar .icon {
+		display: inline-block;
+		padding-top: .2em;
+		padding-bottom: .2em;
+		float: left;
+		width: 3em;
+		text-align: right;
+		/*background: rgb(0, 0, 255);*/
+	}
+
+	#navbanner navbar .icon:after {
+		content: "|"
+	}
+
+	#navbanner navbar .texto {
+		display: inline-block;
+		padding-top: .2em;
+		padding-bottom: .2em;
+		text-align: justify;
+		min-width: 10em;
+		/*background: rgb(0, 255, 0);*/
+	}
+
+
+	#pagina {
+		margin-top: 2.5em;
+	}
+
+	.container, body {
+		background: #212121;
+	}
+}	
+
+
 /* Para mostrarmos a impressora, deve haver espaço suficiente
    para a própria impressora e algum espaço para as margens
    (as margens devem ter no mínimo 1/7 da largura da impressora)
@@ -212,15 +375,15 @@ div {
 	}
 
 	#pagina {
+		margin: 0;
 		position: relative;
-		width: calc(calc(10 * 794vw / calc(7 * 2) * calc(90/794)));
+		padding: calc(calc(calc(794vw / calc(7 * 4) * calc(90/794))));
+		width: calc(calc(calc(10 * 794vw / calc(7 * 2) - calc(2 * 794vw / calc(7 * 4))) * calc(90/794)));
 		top: calc(2vw + calc(calc(calc(1 + 1 / 8) * 794vw / 7 * calc(90/794))));
 		left: calc(5% + calc(calc(794vw / 7 * calc(90/794))));
 		height: 100%;
 		/*top: -150vh;*/
 		z-index: 80;
-		background: white;
-		border: solid 1px black;
 
 		animation-duration: 3s;
 		animation-timing-function: ease-out;
